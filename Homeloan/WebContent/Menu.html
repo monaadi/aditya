@@ -1,0 +1,91 @@
+
+   <!DOCTYPE html>
+<html>
+    <head>
+        <title> drop down menu</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+        <style>
+           * {
+    margin: 0px;
+    padding: 0px;
+}
+#menu ul{
+    list-style:none;
+}
+
+#menu ul li {
+    background-color: red;
+    border: 2px solid black;
+    width: 165px;
+    height:40px;
+    float:left;
+    text-align: center;
+    line-height: 40px;
+    border-radius:8px;
+    position: relative;
+    
+}
+#menu ul li a{
+    text-decoration: none;
+    color:black;
+    display: block;
+}
+#menu ul li a:hover
+{
+    background-color:yellow;
+    border-radius: 8px;
+    height:40px;
+}
+#menu ul ul{
+    position:absolute;
+    display: none;
+}
+#menu ul li:hover>ul{
+    display: block;
+}
+#menu ul ul ul{
+    margin-left:120px;
+    top: 0px;
+    
+    
+}
+        </style>
+    </head>
+      
+   
+    <body>
+        <div id="menu">
+            <ul>
+                <li><a href="#"><h2>Home</h2></a></li>
+                 <li><a href="#"><h2>About Us </h2></a></li> 
+                 <li> <a href="#"><h2>News</h2><span><img src="down.jpg" height="10px" width="20px"></span></a>
+                 
+                 
+                     <ul>
+                     
+                         <li><a href="#"> English</a>
+                             
+                         
+                         <li><a href="#"> Hindi</a> </li>
+                         
+                         <li><a href="#"> Bengali</a></li>
+                         <li><a href="#"> Pujabie</a></li>
+                         <li><a href="#"> france</a></li>
+                         <li><a href="#"> Italy</a></li>
+                         
+                     </ul>
+                 </li>
+                 
+                      <li><a href="#"><h2>Calculator<h2></h2></a></li>            
+                     <li><a href="#"><h2>Application</h2></a></li>
+                     <li><a href="#"><h2>Documents</h2></a></li>
+                     <li><a href="#"><h2>Login<h2></h2></a></li>
+                  <li><a href="#"><h2>FAQ</h2></a></li>
+            </ul>
+        </div>
+    </body>
+   
+        
+</html>
+   

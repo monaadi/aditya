@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        
+     
+        
+        
+     <script type="text/javascript">
+     
+   
+     
+     
+     function ValidateEmail()  
+     {  
+    	 var x=document.getElementById("email").value;
+    // var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+     var mailformat = /^([a-z 0-9\.-]+)@([a-z 0-9-]+).([a-z]{2,8})$/;
+     if(mailformat.test(x))  
+     {  
+      
+     return true;  
+     }  
+     else  
+     {  
+    	 
+     alert("You have entered an invalid email address!"); 
+     return false;  
+     }  
+     }  
+     
+     
+     function ValidatePassword()  
+     {  
+    	 var y=document.getElementById("pass").value;
+    // var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+     var passformat = /^([a-z 0-9\.-]+)@([a-z 0-9-]+).([a-z]{2,8})$/;
+     if(passformat.test(y))  
+     {  
+      
+     return true;  
+     }  
+     else  
+     {  
+    	 
+     alert("You have entered an invalid password!"); 
+     return false;  
+     }  
+     }  
+     
+     
+      function validate()
+ {
+   
+   var x=document.getElementById("email");
+   
+    var y=document.getElementById("pass");
+   
+    
+     if(x.value.trim() == "")
+      {
+  
+    document.getElementById("id1").style.visibility="visible";
+        
+        return false;
+        
+         }
+     else if(y.value.trim()==""||y.value==null)
+       {
+    	// alert(" blank password ");
+         document.getElementById("id2").style.visibility="visible";
+         return false;
+    }
+     else if(y.value.trim().length<5)
+     {
+    	 
+    	  
+        alert("password is too short");
+         return false;
+
+     }
+      else
+     {
+ return true;
+       
+     }
+ }
+
+</script>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <style>
+        
+        body
+        {
+        margin:0;
+        padding:0;
+     
+        }
+        
+        #deco table{
+          margin:0;
+        padding:0;
+        
+        }
+            #deco tr td a
+            {
+          
+                text-align: center;
+                text-decoration: none;
+                color: black; 
+                    display: block;
+                    
+            }
+                    
+                    
+                    #deco {
+                    width:10px;
+                    position:absolute;
+                    top:25%;
+                    left:40%;
+                    transform:transalate(-50%,50%);
+                    color:white;
+                    
+                    }
+                    
+                    #deco h1{
+                    float:left;
+                    font-size: 50px;
+                    border-bottom: 6px solid #4caf50;
+                    margin-bottom:50px;
+                    padding:0px; 
+                    }
+                    
+                    .a{
+                    width:100%;
+                    background:none;
+                    border:4px solid #4caf50;
+                    color:white;
+                    font-size: 20px;
+                
+                    padding:5px;
+                    margin:12px;
+                    }
+                    
+               .b{
+
+
+              
+               padding:10px;
+              background:none;
+              color:black;
+                    font-size: 20px;
+               }
+               
+               .c{
+              
+               padding:10px;
+              background:none;
+              color:black;
+                    font-size: 20px;
+               }
+           
+        </style>
+        </head>
+    <body background="d.jpg" width="500" height="100" >
+        
+        <form onsubmit="return validate()"  method="post" action="a3">
+            <div id="deco">
+            <h1>Login</h1>
+            <table>
+                <tr>
+                    <td><h2>Email Id:</h2></td>
+                    <td><input type="text" name="n1" placeholder="Enter Your Email" id="email"  class="b"  onblur="ValidateEmail()" ></td>
+                    <td><label id ="id1" style="color:red; visibility:hidden"><h2> Invalid</h2></label></td>
+             
+                </tr>
+                
+                <tr>
+                    <td><h2>Password:</h2></td>
+                    <td><input type="password" name="n2" placeholder="Enter Your Password" id="pass" class="c"  onblur="ValidatePassword()" ></td>
+                    <td><label id ="id2" style="color:red; visibility:hidden"> <h2>Invalid</h2></label></td>
+                </tr>
+                
+                <tr>
+                    <td><h2><input type="submit" value="Sign in" class="a" ></h2></td>
+       
+                    <td> <a href="a5.html"> <img src="0.jpg" height="80" width="80"> <center><font color="white">Forget Password</font></center> </a></td>
+                </tr>
+              </table>
+            </div>
+        </form>
+    </body>
+</html>
