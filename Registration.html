@@ -1,0 +1,126 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Forms</title>
+
+<script type="text/javascript">
+
+function ValidateEmail()  
+{  
+	
+		alert("hks");
+	 var x=document.getElementById("email1").value;
+// var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+var mailformat = /^([a-z 0-9\.-]+)@([a-z 0-9-]+).([a-z]{2,8})$/;
+if(mailformat.test(x))  
+{  
+ 
+return true;  
+}  
+else  
+{  
+	 
+alert("You have entered an invalid email address!"); 
+return false;  
+}  
+}  
+
+
+ function validate()
+ {
+  
+   var x=document.getElementById("fname");
+  
+   var y=document.getElementById("mname");
+   var z=document.getElementById("lname");
+   
+   var a=document.getElementById("email");
+  
+   var b=document.getElementById("pass");
+   
+    var c=document.getElementById("npass");
+  
+
+    if(x.value.trim() == "")
+    {
+       alert("hi");
+   //document.getElementById("id1").innerHTML="jfgjffjf";
+      
+      return false;
+      
+       }
+ */
+
+
+
+</script>
+<style type="text/css">
+    h1
+    {
+        background-color:orange;  
+       
+        border:8px ridge black ;
+    }
+    
+    #x tr td{
+    text-decoration:none;
+    font-color:white; 
+    }
+    
+</style>
+
+
+</head>
+<body background="d.jpg">
+<h1><B><center>REGISTRATION</center></B></h1>
+<div id="x">
+<form  onsubmit="return validate()" method="post" action="a2">
+<table border="0" width="50%">
+<tr>
+<td><h3>FirstName:</h3></td>
+<td><input type ="Text" name="fname" placeholder="Type Your FirstName" id="fname"></td>
+<td><label id ="id1" style="color:red; visibility:hidden"> Invalid </label></td>
+
+<td><h3>MiddleName:</h3></td>
+<td><input type ="Text" name="mname" placeholder="Type Your MiddleName" id="mname"></td>
+<td><label id ="id2" style="color:red; visibility:hidden"> Invalid </label></td>
+
+<td><h3>LastName:</h3></td>
+<td><input type ="Text" name="lname" placeholder="Type Your LastName"  id="lname"></td>
+<td><label id ="id3" style="color:red; visibility:hidden"> Invalid </label></td>
+
+</tr>
+
+<tr>
+<td><h3>Email-ID:</h3></td>
+<td><input type="Text" name="email" placeholder="Enter your Email"  id="email1"  onclick="ValidateEmail()"></td>
+<td><label id ="id4" style="color:red; visibility:hidden"> Invalid </label></td>
+</tr>
+
+<tr>
+<td><h3>Password:</h3></td>
+<td><input type="password" name="pass" placeholder="Enter your Password" id="pass"></td>
+<td><label id ="id5" style="color:red; visibility:hidden"> Invalid </label></td>
+</tr>
+
+
+<tr>
+<td><h3> Confirm Password:</h3></td>
+<td><input type="password" name="npass" placeholder="Re-Enter your Password" id="npass"></td>
+<td><label id ="id6" > </label></td>
+</tr>
+
+
+
+
+
+<tr>
+<td><h2><input type="submit" value="Submit"></h2></td>
+<td><h2><input type="reset" value="Refresh"></h2></td>
+</tr>
+
+</table>
+</form>
+</div>
+</body>
+</html>
