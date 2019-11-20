@@ -3,124 +3,154 @@
 <head>
 <title>Forms</title>
 
+<style>
+.error{
+    color:#FF0000;
+}
+
+
+</style>
+
 <script type="text/javascript">
 
-function ValidateEmail()  
-{  
+function valid(){
+	var name = document.getElementById('name').value;
+	var name1 = document.getElementById('name1').value;
+	var name2 = document.getElementById('name2').value;
 	
-		alert("hks");
-	 var x=document.getElementById("email1").value;
-// var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
-var mailformat = /^([a-z 0-9\.-]+)@([a-z 0-9-]+).([a-z]{2,8})$/;
-if(mailformat.test(x))  
-{  
- 
-return true;  
-}  
-else  
-{  
-	 
-alert("You have entered an invalid email address!"); 
-return false;  
-}  
-}  
+	var pwd = document.getElementById('pwd').value;
+	var pwd1 = document.getElementById('pwd1').value;
+	 var pass= document.getElementById('eml').value;
+	
+	
+	var id1 = document.getElementById('id1');
+	var id1a = document.getElementById('id1a');
+	var id1b = document.getElementById('id1b');
+	
+	var id2 = document.getElementById('id2');
+	var id3 = document.getElementById('id3');
+	var id4 = document.getElementById('id4');
+	
 
+	var regex = /^[a-zA-Z ]{5,}$/;
+	var pwdregex = /^[a-zA-Z0-9$#@]{8,}$/;
+	 var emailformat = /^([a-z 0-9\.-]+)@([a-z 0-9-]+).([a-z]{2,8})$/;
+	
+	var flag=true;
+	id1.innerHTML='';
+	id2.innerHTML='';
+	
+	if(name==''){
+	    id1.innerHTML='Please fill FirstName';
+	    flag=false;
+	  }
+	else
+	if(regex.test(name) == false){
+	     id1.innerHTML="Name must be in alphabets only";
+	     flag=false;
+	  }
+	
+	if(name2==''){
+	    id1b.innerHTML='Please fill LastName';
+	    flag=false;
+	  }
+	else
+	if(regex.test(name2) == false){
+	     id1b.innerHTML="Name must be in alphabets only";
+	     flag=false;
+	  }
+	
+	if(pwd==''){
+	    id2.innerHTML='Please fill password';
+	    flag= false;
+	  }
+	else
+	if( pwdregex.test(pwd) == false){
+	     id2.innerHTML="Password is improper";
+	     flag= false;
+	  }  
+	if(pwd1==''){
+	    id4.innerHTML='ReEnter password';
+	    flag= false;
+	  }
+	
+	if (pwd != pwd1) { 
+        alert ("\nPassword did not match: Please try again...") 
+        return false; 
+    } 
 
- function validate()
- {
   
-   var x=document.getElementById("fname");
-  
-   var y=document.getElementById("mname");
-   var z=document.getElementById("lname");
+	
+	if(pass==''){
+	    id3.innerHTML='Please fill email';
+	    flag= false;
+	  }
+	else
+	if(emailformat.test(pass) == false){
+	     id3.innerHTML="Email is improper";
+	     flag= false;
+	  }  
+	
+	
+	
+	
+
+	return flag;
+	}
    
-   var a=document.getElementById("email");
-  
-   var b=document.getElementById("pass");
-   
-    var c=document.getElementById("npass");
-  
-
-    if(x.value.trim() == "")
-    {
-       alert("hi");
-   //document.getElementById("id1").innerHTML="jfgjffjf";
-      
-      return false;
-      
-       }
- */
-
-
-
-</script>
-<style type="text/css">
-    h1
-    {
-        background-color:orange;  
-       
-        border:8px ridge black ;
-    }
     
-    #x tr td{
-    text-decoration:none;
-    font-color:white; 
-    }
-    
-</style>
+</Script>
 
 
 </head>
 <body background="d.jpg">
-<h1><B><center>REGISTRATION</center></B></h1>
-<div id="x">
-<form  onsubmit="return validate()" method="post" action="a2">
-<table border="0" width="50%">
-<tr>
-<td><h3>FirstName:</h3></td>
-<td><input type ="Text" name="fname" placeholder="Type Your FirstName" id="fname"></td>
-<td><label id ="id1" style="color:red; visibility:hidden"> Invalid </label></td>
+<h1><B><center><font color="white">REGISTRATION</font></center></B></h1>
 
-<td><h3>MiddleName:</h3></td>
-<td><input type ="Text" name="mname" placeholder="Type Your MiddleName" id="mname"></td>
-<td><label id ="id2" style="color:red; visibility:hidden"> Invalid </label></td>
+<form action="abc.jsp" onsubmit="return valid()">
+<table>
+<tr >
+<td>FirstName: </td>
+<td><input type='text' id='name' name='name'>
+<div id='id1' class='error'></div></td>
 
-<td><h3>LastName:</h3></td>
-<td><input type ="Text" name="lname" placeholder="Type Your LastName"  id="lname"></td>
-<td><label id ="id3" style="color:red; visibility:hidden"> Invalid </label></td>
+<td>MiddleName: </td>
+<td><input type='text' id='name1' name='name'>
+<div id='id1a' class='error'></div></td>
 
+<td>LastName: </td>
+<td><input type='text' id='name2' name='name'>
+<div id='id1b' class='error'></div></td>
 </tr>
 
-<tr>
-<td><h3>Email-ID:</h3></td>
-<td><input type="Text" name="email" placeholder="Enter your Email"  id="email1"  onclick="ValidateEmail()"></td>
-<td><label id ="id4" style="color:red; visibility:hidden"> Invalid </label></td>
-</tr>
-
-<tr>
-<td><h3>Password:</h3></td>
-<td><input type="password" name="pass" placeholder="Enter your Password" id="pass"></td>
-<td><label id ="id5" style="color:red; visibility:hidden"> Invalid </label></td>
-</tr>
+<br>
 
 
 <tr>
-<td><h3> Confirm Password:</h3></td>
-<td><input type="password" name="npass" placeholder="Re-Enter your Password" id="npass"></td>
-<td><label id ="id6" > </label></td>
+<td>Enter Email:</td>
+<td><input type='text' id='eml' name='email'>
+<div id='id3' class='error'></div></td>
 </tr>
-
-
-
-
+<br> 
 
 <tr>
-<td><h2><input type="submit" value="Submit"></h2></td>
-<td><h2><input type="reset" value="Refresh"></h2></td>
+<td>Enter password:</td>
+<td><input type='password' id='pwd' name='pwd'>
+<div id='id2' class='error'></div></td>
 </tr>
 
+<tr>
+<td>Confirm password:</td>
+<td><input type='password' id='pwd1' name='pwd'>
+<div id='id4' class='error'></div></td>
+</tr>
+
+<br>  
+ 
+ <tr>                 
+<td><h1><input type='submit' value='Submit'></h1></td>
+</tr>
 </table>
 </form>
-</div>
+
 </body>
 </html>
